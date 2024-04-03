@@ -5,6 +5,8 @@ if ! who | grep -wq $USER; then
   exit
 fi
 
+
+
 # Phone numbers
 MY_NUMBER='+xxx'
 HER_NUMBER='+xxx'
@@ -27,5 +29,7 @@ RESPONSE=`curl -fSs -u "$TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN" \
 # Log errors
 if [ $? -gt 0 ]; then
   echo "Failed to send SMS: $RESPONSE"
+
+  
   exit 1
 fi
